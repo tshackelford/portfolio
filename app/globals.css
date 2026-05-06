@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
+@theme {
+  --color-canyon: #8c3e28;
+  --color-mesa:   #b76346;
+  --color-sage:   #7a8a5e;
+  --color-sun:    #e8b582;
+  --color-sand:   #f3d8c2;
+  --color-bone:   #fff5e8;
+  --color-ink:    #2a2118;
+  --color-dust:   #6f5d4a;
+
+  --font-display: var(--font-fraunces);
+  --font-body:    var(--font-work-sans);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  background: var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Focus ring (canyon, 2px). Never remove without replacement. */
+:focus-visible {
+  outline: 2px solid var(--color-canyon);
+  outline-offset: 2px;
+  border-radius: 2px;
+  transition: outline-offset 100ms ease-out;
+}
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-canyon);
+  color: var(--color-bone);
+  padding: 0.75rem 1.25rem;
+  z-index: 100;
+  transition: top 150ms ease-out;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced-motion contract — disables ALL animation across the site. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
