@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Fraunces, Work_Sans } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/shell/Header";
+import { Footer } from "@/components/shell/Footer";
+import { SkipLink } from "@/components/shell/SkipLink";
+import { siteMeta } from "@/content/meta";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -18,10 +22,9 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Thomas Shackelford — Senior Software Engineer",
-  description:
-    "Senior software engineer in Lakewood, CA. Thirteen years building accessible, high-performance web applications for fintech.",
-  metadataBase: new URL("https://thomasshackelford.dev"),
+  title: siteMeta.title,
+  description: siteMeta.description,
+  metadataBase: new URL(siteMeta.url),
 };
 
 export default function RootLayout({
@@ -31,7 +34,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${workSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SkipLink />
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
