@@ -24,7 +24,7 @@ export function ProjectEntry({ project, children }: Props) {
         {project.tags.map((tag) => (
           <li
             key={tag}
-            className="text-xs uppercase tracking-wider text-sage bg-sage/10 px-2.5 py-1 rounded"
+            className="text-xs uppercase tracking-wider text-ink bg-sage/25 px-2.5 py-1 rounded"
           >
             {tag}
           </li>
