@@ -16,6 +16,7 @@
     "test:lhci": "lhci autorun"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.6",
     "motion": "^12.38.0",
     "next": "16.2.5",
     "react": "19.2.4",

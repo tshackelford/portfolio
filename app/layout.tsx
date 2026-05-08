@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/shell/Header";
 import { Footer } from "@/components/shell/Footer";
 import { SkipLink } from "@/components/shell/SkipLink";
+import { Analytics } from "@/components/shell/Analytics";
 import { siteMeta } from "@/content/meta";
 
 const fraunces = Fraunces({
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${workSans.variable}`}>
       <body>
+        <Analytics />
         <SkipLink />
         <Header />
         <main id="main">{children}</main>
