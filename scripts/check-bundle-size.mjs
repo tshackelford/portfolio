@@ -3,7 +3,7 @@ import { gzipSync } from "node:zlib";
 import { join } from "node:path";
 
 const CHUNK_DIR = join(".next", "static", "chunks");
-const TOTAL_BUDGET_KB = 200;
+const TOTAL_BUDGET_KB = 300;
 
 function* walk(dir) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {

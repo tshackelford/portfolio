@@ -12,7 +12,7 @@ export function Intro() {
         </h2>
         <p className="text-xl text-ink leading-relaxed">
           Thirteen years building accessible web applications for financial
-          institutions you've banked at without knowing it. I write code that
+          institutions you&rsquo;ve banked at without knowing it. I write code that
           the next person can change without fear, mentor the engineers around
           me, and care more about the craft than the stack.
         </p>

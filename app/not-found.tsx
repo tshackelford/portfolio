@@ -10,7 +10,7 @@ export default function NotFound() {
         Off the trail.
       </h1>
       <p className="mt-4 text-lg text-ink/85">
-        That page isn't here. Try the map below.
+        That page isn&rsquo;t here. Try the map below.
       </p>
       <ul className="mt-8 flex justify-center gap-6 text-canyon">
         <li><Link href="/" className="underline underline-offset-4">Home</Link></li>

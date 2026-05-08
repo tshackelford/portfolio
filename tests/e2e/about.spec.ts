@@ -5,7 +5,7 @@ test.describe("About page", () => {
   test("renders header, professional bit, career, and personal sections", async ({ page }) => {
     await page.goto("/about");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await expect(page.getByRole("heading", { level: 2, name: /Where I've been/i })).toBeAttached();
+    await expect(page.getByRole("heading", { level: 2, name: /Where I.{1,2}ve been/i })).toBeAttached();
     await expect(page.getByRole("heading", { level: 2, name: /Outside the work/i })).toBeAttached();
     await expect(page.getByText(/Trabian/)).toBeAttached();
     await expect(page.getByText(/Q2 Software/)).toBeAttached();

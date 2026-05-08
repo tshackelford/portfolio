@@ -23,7 +23,7 @@ export function CareerSnapshot() {
           id="career-heading"
           className="font-[family-name:var(--font-display)] font-extrabold text-3xl text-ink mb-8"
         >
-          Where I've been
+          Where I&rsquo;ve been
         </h2>
         <ul className="grid gap-6 md:grid-cols-2">
           {careerEntries.map((e) => (
