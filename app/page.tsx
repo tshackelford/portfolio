@@ -1,13 +1,15 @@
-import { Hero } from "./_home/Hero";
-import { Intro } from "./_home/Intro";
-import { Callouts } from "./_home/Callouts";
+import { About } from "./_sections/About";
+import { Projects } from "./_sections/Projects";
+import { Career } from "./_sections/Career";
+import { Contact } from "./_sections/Contact";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Intro />
-      <Callouts />
+      <About />
+      <Projects />
+      <Career />
+      <Contact />
     </>
   );
 }
