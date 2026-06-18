@@ -18,8 +18,12 @@
   color-scheme: light;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
-  background: var(--color-sand);
+  background: var(--color-bone);
   color: var(--color-ink);
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
