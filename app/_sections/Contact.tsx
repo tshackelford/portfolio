@@ -1,5 +1,5 @@
 import { Mail, FileDown } from "lucide-react";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SectionShell } from "@/components/shell/SectionShell";
 
 type ContactLink = {
@@ -13,13 +13,13 @@ const contactLinks: ContactLink[] = [
   {
     href: "https://github.com/thomasshackelford",
     label: "GitHub",
-    Icon: SiGithub,
+    Icon: FaGithub,
     external: true,
   },
   {
     href: "https://www.linkedin.com/in/thomas-shackelford",
     label: "LinkedIn",
-    Icon: SiLinkedin,
+    Icon: FaLinkedin,
     external: true,
   },
   {
