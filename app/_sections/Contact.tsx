@@ -1,6 +1,7 @@
 import { Mail, FileDown } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SectionShell } from "@/components/shell/SectionShell";
+import { ScrollFadeIn } from "@/components/motion/ScrollFadeIn";
 
 type ContactLink = {
   href: string;
@@ -39,28 +40,30 @@ const contactLinks: ContactLink[] = [
 export function Contact() {
   return (
     <SectionShell id="contact">
-      <div className="fade-up">
+      <ScrollFadeIn>
         <p className="text-canyon text-xs uppercase tracking-[0.16em] font-semibold">
           § Contact
         </p>
         <h2 className="mt-1 font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-ink">
           Get in touch
         </h2>
-      </div>
+      </ScrollFadeIn>
       <ul className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {contactLinks.map(({ href, label, Icon, external }) => (
-          <li key={label} className="fade-up">
-            <a
-              href={href}
-              className="block bg-sand/40 hover:bg-sand/60 transition-colors rounded-xl border border-canyon/15 p-6 text-center"
-              {...(external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              <Icon className="w-8 h-8 mx-auto text-ink" />
-              <p className="mt-3 font-semibold text-ink">{label}</p>
-            </a>
-          </li>
+        {contactLinks.map(({ href, label, Icon, external }, i) => (
+          <ScrollFadeIn key={label} delay={0.15 + i * 0.1}>
+            <li>
+              <a
+                href={href}
+                className="block bg-sand/40 hover:bg-sand/60 transition-colors rounded-xl border border-canyon/15 p-6 text-center"
+                {...(external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                <Icon className="w-8 h-8 mx-auto text-ink" />
+                <p className="mt-3 font-semibold text-ink">{label}</p>
+              </a>
+            </li>
+          </ScrollFadeIn>
         ))}
       </ul>
     </SectionShell>

@@ -52,21 +52,6 @@ html, body {
   top: 0;
 }
 
-/* Scroll-driven fade-up. Falls back to "always visible" in browsers
-   that don't support animation-timeline (Safari as of writing). */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@supports (animation-timeline: view()) {
-  .fade-up {
-    animation: fadeUp linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 30%;
-  }
-}
-
 /* Reduced-motion contract — disables ALL animation across the site. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -74,11 +59,5 @@ html, body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-  /* Scroll-driven fades default to opacity:0 in their from-state — force visible
-     so reduced-motion users don't see invisible content. */
-  .fade-up {
-    opacity: 1 !important;
-    transform: none !important;
   }
 }
