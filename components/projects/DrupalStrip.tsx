@@ -55,11 +55,9 @@ export function DrupalStrip({ sites }: Props) {
               sizes="(max-width: 768px) 50vw, 200px"
               className="object-cover"
             />
-            {s.note ? (
-              <span className="absolute bottom-1 left-1 right-1 bg-ink/70 text-bone text-[0.65rem] uppercase tracking-wide px-2 py-1 rounded">
-                {s.note}
-              </span>
-            ) : null}
+            <span className="absolute bottom-1 left-1 right-1 bg-ink/70 text-bone text-[0.65rem] uppercase tracking-wide px-2 py-1 rounded">
+              {s.name}
+            </span>
           </div>
         );
 

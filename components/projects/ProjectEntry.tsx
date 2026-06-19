@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/content/projects";
 
 type Props = {
@@ -34,17 +36,37 @@ export function ProjectEntry({ project, children }: Props) {
         ))}
       </ul>
       {children ? <div className="mt-8">{children}</div> : null}
+      {project.images.length > 0 ? (
+        <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          {project.images.map((img) => (
+            <li
+              key={img.src}
+              className="overflow-hidden rounded-xl border border-canyon/15 bg-sand/30"
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto"
+              />
+            </li>
+          ))}
+        </ul>
+      ) : null}
       {project.links.length > 0 ? (
-        <ul className="mt-6 flex flex-wrap gap-4">
+        <ul className="mt-8 flex flex-wrap gap-3">
           {project.links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-canyon underline decoration-canyon/40 underline-offset-4 hover:decoration-canyon"
+                className="inline-flex items-center gap-2 bg-canyon text-bone px-5 py-2.5 rounded-md font-semibold hover:bg-canyon/90 transition-colors"
               >
-                {l.label} →
+                {l.label}
+                <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </li>
           ))}
