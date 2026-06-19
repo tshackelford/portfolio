@@ -39,15 +39,17 @@ const contactLinks: ContactLink[] = [
 export function Contact() {
   return (
     <SectionShell id="contact">
-      <p className="text-canyon text-xs uppercase tracking-[0.16em] font-semibold">
-        § Contact
-      </p>
-      <h2 className="mt-1 font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-ink">
-        Get in touch
-      </h2>
+      <div className="fade-up">
+        <p className="text-canyon text-xs uppercase tracking-[0.16em] font-semibold">
+          § Contact
+        </p>
+        <h2 className="mt-1 font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-ink">
+          Get in touch
+        </h2>
+      </div>
       <ul className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
         {contactLinks.map(({ href, label, Icon, external }) => (
-          <li key={label}>
+          <li key={label} className="fade-up">
             <a
               href={href}
               className="block bg-sand/40 hover:bg-sand/60 transition-colors rounded-xl border border-canyon/15 p-6 text-center"

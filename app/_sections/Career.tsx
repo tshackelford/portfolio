@@ -15,17 +15,19 @@ function formatRange(start: string, end: string) {
 export function Career() {
   return (
     <SectionShell id="career">
-      <p className="text-canyon text-xs uppercase tracking-[0.16em] font-semibold">
-        § Career
-      </p>
-      <h2 className="mt-1 font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-ink">
-        Where I&rsquo;ve been
-      </h2>
+      <div className="fade-up">
+        <p className="text-canyon text-xs uppercase tracking-[0.16em] font-semibold">
+          § Career
+        </p>
+        <h2 className="mt-1 font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-4xl text-ink">
+          Where I&rsquo;ve been
+        </h2>
+      </div>
       <ul className="mt-10 grid gap-6 md:grid-cols-2">
         {careerEntries.map((e) => (
           <li
             key={e.company}
-            className="bg-sand/40 p-6 rounded-xl border border-canyon/15"
+            className="fade-up bg-sand/40 p-6 rounded-xl border border-canyon/15"
           >
             <p className="text-canyon text-xs uppercase tracking-[0.14em] font-semibold">
               {formatRange(e.start, e.end)}
