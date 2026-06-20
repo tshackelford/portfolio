@@ -1,14 +1,12 @@
 import { About } from "./_sections/About";
-import { Projects } from "./_sections/Projects";
-import { Career } from "./_sections/Career";
+import { Work } from "./_sections/Work";
 import { Contact } from "./_sections/Contact";
 
 export default function HomePage() {
   return (
     <>
       <About />
-      <Career />
-      <Projects />
+      <Work />
       <Contact />
     </>
   );

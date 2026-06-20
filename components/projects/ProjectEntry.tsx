@@ -37,7 +37,7 @@ export function ProjectEntry({ project, children }: Props) {
       </ul>
       {children ? <div className="mt-8">{children}</div> : null}
       {project.images.length > 0 ? (
-        <ul className="mt-8 grid gap-4 md:grid-cols-2">
+        <ul className="mt-8 grid gap-4 md:grid-cols-2 max-w-2xl">
           {project.images.map((img) => (
             <li
               key={img.src}
@@ -48,7 +48,7 @@ export function ProjectEntry({ project, children }: Props) {
                 alt={img.alt}
                 width={img.width}
                 height={img.height}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 320px"
                 className="w-full h-auto"
               />
             </li>

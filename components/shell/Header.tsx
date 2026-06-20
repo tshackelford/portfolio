@@ -1,7 +1,6 @@
 const sections = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#career", label: "Career" },
+  { href: "#work", label: "Work" },
   { href: "#contact", label: "Contact" },
 ] as const;
 

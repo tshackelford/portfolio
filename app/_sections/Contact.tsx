@@ -12,7 +12,7 @@ type ContactLink = {
 
 const contactLinks: ContactLink[] = [
   {
-    href: "https://github.com/thomasshackelford",
+    href: "https://github.com/tshackelford",
     label: "GitHub",
     Icon: FaGithub,
     external: true,
@@ -30,7 +30,7 @@ const contactLinks: ContactLink[] = [
     external: false,
   },
   {
-    href: "/resume.pdf",
+    href: "/resume",
     label: "Resume",
     Icon: FileDown,
     external: true,

@@ -55,16 +55,6 @@ export const projects: Project[] = [
           liveUrl: "https://www.foundersfcu.com/",
         },
         {
-          name: "Founders Insurance",
-          thumbnail: "/projects/drupal/founders-insurance.jpg",
-          liveUrl: "https://www.foundersfcuinsurance.com/",
-        },
-        {
-          name: "Founders Wealth",
-          thumbnail: "/projects/drupal/founders-wealth.jpg",
-          liveUrl: "https://www.wealthmanagementatfounders.com/",
-        },
-        {
           name: "Verity CU",
           thumbnail: "/projects/drupal/verity.jpg",
           liveUrl: "https://www.veritycu.com/",
