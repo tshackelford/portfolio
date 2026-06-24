@@ -9,17 +9,17 @@ type Props = {
 
 export function SectionShell({ id, children, background, className }: Props) {
   return (
-    <section id={id} className={`relative ${className ?? ""}`}>
+    <section id={id} className={`relative border-t border-canyon/10 first:border-t-0 ${className ?? ""}`}>
       {background ? (
         <div
           data-section-background
           aria-hidden="true"
-          className="absolute inset-0 -z-10 pointer-events-none overflow-hidden"
+          className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
         >
           {background}
         </div>
       ) : null}
-      <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-24">
+      <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-16 md:py-24">
         {children}
       </div>
     </section>

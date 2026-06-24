@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Thomas Shackelford — Senior Software Engineer";
+export const alt = "Thomas Shackelford — Web Developer/Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ export default function OpengraphImage() {
             margin: 0,
           }}
         >
-          Senior Software Engineer · Lakewood, CA
+          Web Developer/Software Engineer · Lakewood, CA
         </p>
         <h1
           style={{

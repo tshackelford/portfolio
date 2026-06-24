@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# thomasshackelford.dev
 
-## Getting Started
+Personal portfolio site. One page, three sections: About → Work → Contact. Work folds career history and selected projects together.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, static-first)
+- **React 19** / **TypeScript** (strict)
+- **Tailwind CSS v4** — palette + theme tokens live in `app/globals.css`
+- **motion** — scroll-driven fade-ins via `ScrollFadeIn`
+- **lucide-react** + **react-icons/fa** — UI + brand icons
+- **next/font** — Fraunces (display) + Work Sans (body)
+
+## Local dev
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env.local` at the project root (gitignored):
 
-## Learn More
+```
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX   # optional — enables Google Analytics
+```
 
-To learn more about Next.js, take a look at the following resources:
+On Vercel, set the same vars under Project Settings → Environment Variables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit copy and data in `content/`:
 
-## Deploy on Vercel
+- `meta.ts` — name, title, role, location
+- `personal.ts` — `aboutIntro` paragraph
+- `career.ts` — career entries (company, roles[], dates, one-liner)
+- `projects.ts` — projects, Drupal site list, capabilities, images, links
+- `skills.ts` — skill groups shown under the About hero
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+  _sections/       About, Work, Contact
+  layout.tsx       Header + Footer + Analytics shell
+  page.tsx         Composes the three sections
+  opengraph-image.tsx
+  not-found.tsx
+components/
+  shell/           Header, Footer, SkipLink, SectionShell, SectionBackground
+  motion/          ScrollFadeIn
+  projects/        ProjectEntry, DrupalStrip, CapabilitiesList
+content/           Typed copy + data
+public/
+  resume.pdf       Linked from /resume (Next rewrite)
+  projects/        Site screenshots
+```
+
+## Useful scripts
+
+```bash
+npm run dev          # dev server
+npm run build        # production build
+npm run lint         # eslint
+```

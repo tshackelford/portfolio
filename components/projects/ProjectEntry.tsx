@@ -11,7 +11,7 @@ export function ProjectEntry({ project, children }: Props) {
   return (
     <article
       aria-labelledby={`project-${project.id}`}
-      className="py-12 border-t border-canyon/15 first:border-t-0"
+      className="pt-8 my-8 border-t border-canyon/15"
     >
       <p className="text-canyon text-xs uppercase tracking-[0.14em] font-semibold">
         {project.timeframe} · {project.role}
