@@ -55,7 +55,7 @@ export const projects: Project[] = [
   },{
     id: "drupal-cluster",
     title: "Drupal Development",
-    role: "",
+    role: "Senior Web Developer",
     timeframe: "2015 – 2026",
     summary:
       "More than ten years building custom and templated Drupal sites for financial institutions, while working with a team to maintain an in-house built Drupal based product. Custom modules, migration assistance, re-usable solutions, and a focus on web accessibility compliance. ",
